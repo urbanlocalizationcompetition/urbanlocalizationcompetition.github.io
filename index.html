@@ -119,39 +119,33 @@ Support on the dataset and the instructions will be provided by the organizing t
 -->
 
 <!--											<h3>Call for Participation</h3>-->
-											<p>In wireless communications, the <b><em>pathloss</em></b> (or <b><em>large scale fading coefficient</em></b>) quantifies the loss
-of signal strength between a transmitter (Tx) and a receiver (Rx) due to large scale effects, such as
-free-space propagation loss, and interactions of the radio waves with the obstacles (which block
-line-of-sight, like buildings, vehicles, pedestrians), e.g. penetrations, reflections and diffractions.</p><p>
-Many present or envisioned applications in wireless communications explicitly rely on the
-knowledge of the pathloss function, and thus, estimating pathloss is a crucial task. Some
-example use cases include: <em><b>User-cell site association, fingerprint-based localization, physical-layer security, optimal power control, path planning, and activity detection.</em></b>
+											<p>In urban environments, Global Navigation Satellite Systems fail to provide good accuracy because of the low 
+												likelihood of line-of-sight (LOS) links between the User Equipment (UE) to be located and the satellites, due 
+												to the presence the buildings that block the satellite signals. Thus, other approaches, that can reliably 
+												operate under non-line-of-sight (NLOS) conditions are required. 
                                             </p>
                                             <p>
-Deterministic simulation methods such as ray-tracing are well-known to provide very good
-estimations of pathloss values. However, their high computational complexity renders them
-unsuitable for most of the envisioned applications.
+ In the recent years, many researchers have developed algorithms that are tailored to perform under heavy NLOS conditions. Many of such methods use Received Signal Strength (RSS) 
+						    or Time of Arrival (ToA) (or both, in hybrid methods) information regarding the beacon signals that are regularly sent from wireless 
+						    anchor infrastructure nodes such as Base Stations (BS) or Access Points (AP).  
                                                 </p>
                                             <p>
-In the very recent years, many research groups have developed deep learning-based methods
-which achieve a comparable accuracy with respect to ray-tracing, but with orders of magnitude
-lower computational times, making accurate pathloss estimations available for the applications.
+In order to foster research and facilitate fair comparisons among the methods in realistic NLOS heavy conditions, we provide a  pathloss radio map dataset based on accurate 
+						    radio wave propagation simulations along with the corresponding novel ToA radio map dataset generated under realistic urban scenarios and launch 
+						    the <b><em>Urban Wireless Localization Competition.</em></b>
                                                 </p>
                                             <p>
-In order to foster research and facilitate fair comparisons among the methods, we provide a
-novel pathloss radio map dataset based on ray-tracing simulations and launch the <b><em>First Pathloss
-Radio Map Prediction Challenge.</em></b>
-In addition to the pathloss prediction task, the challenge also includes <b><em>coverage classification</em></b>
-as a second independent task, where the locations in a city map should be classified to be above
-or below a given pathloss value.
+The main task of the competition is to develop highly accurate localization methods which can make use of RSS (pathloss) and ToA measurements. 
                                                 </p>
+						  <p>					
+											The ranking of the methods is going to be based on the average of their accuracies in NLOS-only and NLOS/LOS-mixed scenarios and under different noise levels on the RSS and 
+											ToA measurements.
+                                                </p>
+                                            
+						<p>
+                                            The top 3 ranked teams will be invited to submit a (maximum) 6-page paper and present it at MLSP 2023. The accepted papers will be published in the MLSP proceedings.</p>
                                             <p>
-                                            The top 5 ranked teams will be invited to submit a 2-page paper and present it at ICASSP
-2023. The accepted papers will be published in the ICASSP proceedings. The teams that present
-their work at ICASSP are also invited to submit a full paper about their work to IEEE Open
-Journal of Signal Processing.</p>
-                                            <p>
-                                            The deadline for submission of the trained models, and the test codes is February 3, 2023.
+                                            The deadline for the submission of the results (location estimates in the test set), trained models (if applicable), and the test codes is July 4, 2023. 
                                             </p>
                                             <p>
 Support on the dataset and the instructions will be provided by the organizing team.</p>
@@ -159,14 +153,17 @@ Support on the dataset and the instructions will be provided by the organizing t
                                             IMPORTANT NOTE: The intellectual property (IP) of the shared/submitted material (e.g. code) will not be transferred to the
 challenge organizers. When such material is made publicly available by a participant, an appropriate license should accompany.
                                             </p>
-                                            <h3>Task #1: Pathloss Prediction</h3>
-											<p>The first task is to predict the pathloss radio map given the city map and the transmitter
-location.
-                                            </p>
-                                            <h3>Task #2: Coverage classification</h3>
-											<p>In coverage (or service area) classification, the goal is to classify a region of interest according
-to their pathloss values being above or below some pre-determined pathloss value, given a Tx
-with known location and the city map. The goal is then to predict the coverage map from the city map and transmitter location. 
+                                            <h3>Main Task: Location Estimation using RSS/ToA</h3>
+											<p>The main task of the challenge is to achieve accurate location estimates by using either or both the pathloss and ToA radio maps. 
+												</p><p>The participants are asked to develop methods that are robust to realistic inaccuracies in their radio map estimates. 
+												To this end, we  model the mismatch between the  available and real RSS and ToA information by additive Gaussian noise terms. 
+                                            </p><p>
+											The ranking of the submitted methods will be based on the average of their accuracies in NLOS-only and NLOS/LOS-mixed scenarios and under
+											different noise levels on the RSS and ToA measurements (the exact values of the noise variances to be  
+											be decided).</p>
+                                            <h3>Optional Tasks: RSS- or ToA-only localization</h3>
+											<p>The participants are encouraged to also submit methods that only use the RSS or 
+												ToA information.
                                             </p>
 										</article>
 
